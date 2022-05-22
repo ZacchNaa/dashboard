@@ -14,7 +14,6 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import MenuIcon from "@mui/icons-material/Menu";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import {HiOutlineLightningBolt} from 'react-icons/hi'
 // images
 import logo from "../../assets/logo.svg";
@@ -71,12 +70,24 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 const mdTheme = createTheme({
+  customProps: {
+    background: "#E5E5E5",
+    color: "#103B66",
+  },
   palette: {
     primary: {
       main: "#21B8F9",
     },
     secondary: {
       main: "#F33451",
+    },
+    extra: {
+      orange: "#F3A35C",
+      orangePrimary: "#FFA26B",
+      greenPrimary: "#00C48C",
+      darkGreen: "#005128",
+      darkBlue: "#000032",
+      tintBlue: "#E9F8FE",
     },
   },
 });
@@ -120,7 +131,7 @@ function Dashboard() {
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={2} color="secondary">
-                <HiOutlineLightningBolt />
+                <HiOutlineLightningBolt color="#103B66" />
                 <Typography variant="caption" color="inherit">What's new</Typography>
               </Badge>
             </IconButton>
