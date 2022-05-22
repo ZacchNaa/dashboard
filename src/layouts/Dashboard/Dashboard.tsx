@@ -13,11 +13,13 @@ import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { Button, Card, CardActionArea, CardActions, CardContent, Stack } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import {HiOutlineLightningBolt} from 'react-icons/hi'
+import { HiOutlineLightningBolt } from "react-icons/hi";
 // images
 import logo from "../../assets/logo.svg";
-
+import { Link } from "@mui/material";
 
 const drawerWidth: number = 240;
 
@@ -102,7 +104,12 @@ function Dashboard() {
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open} color="transparent" elevation={0} >
+        <AppBar
+          position="absolute"
+          open={open}
+          color="inherit"
+          elevation={0}
+        >
           <Toolbar
             sx={{
               pr: "24px", // keep right padding when drawer closed
@@ -129,10 +136,18 @@ function Dashboard() {
             >
               Dashboard
             </Typography>
-            <IconButton color="inherit">
+            <IconButton color="inherit" sx={{ px: [3] }}>
               <Badge badgeContent={2} color="secondary">
-                <HiOutlineLightningBolt color="#103B66" />
-                <Typography variant="caption" color="inherit">What's new</Typography>
+                <HiOutlineLightningBolt
+                  style={{ marginRight: "5px" }}
+                  color="#103B66"
+                />
+                <Typography
+                  variant="body1"
+                  sx={{ color: (theme) => theme.customProps.color }}
+                >
+                  What's new
+                </Typography>
               </Badge>
             </IconButton>
           </Toolbar>
@@ -146,9 +161,9 @@ function Dashboard() {
               px: [2, 3],
             }}
           >
-            <img src={logo} alt="logo" />
+            {open && <img src={logo} alt="logo" />}
             <IconButton onClick={toggleDrawer}>
-              <MenuIcon />
+              {open && <MenuIcon />}
             </IconButton>
           </Toolbar>
           <Divider />
@@ -171,38 +186,196 @@ function Dashboard() {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
+          <Box
+            sx={{
+              background:
+                "linear-gradient(180deg, #21B8F9 0%, rgba(33, 184, 249, 0) 132.05%)",
+              height: "182px",
+              px: [3],
+            }}
+          >
+            <Box
+              sx={{
+                py: [5, 5],
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                color: "white",
+              }}
+              maxWidth="xl"
+            >
+              <Typography variant="h4">Welcome Mario!</Typography>
+              <Box
+                sx={{
+                  py: [2],
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  color: "white",
+                }}
+              >
+                <Link
+                  href="#"
+                  sx={{ color: "white", textDecoration: "underline", px: [3] }}
                 >
-                  SOME CARD
-                </Paper>
+                  app.vetrinalive.it/fenoh-store
+                </Link>
+                <OpenInNewIcon />
+              </Box>
+            </Box>
+          </Box>
+          <Container maxWidth="xl" sx={{ mt: -9, mb: 4 }}>
+            <Grid container columns={16} spacing={2}>
+              <Grid item xs={16} md={12} lg={11} xl={11}>
+                <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
+                  <Grid item xs={16}>
+                    <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
+                      <CardActionArea>
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            Lizard
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Lizards are a widespread group of squamate reptiles,
+                            with over 6,000 species, ranging across all
+                            continents except Antarctica
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <Button size="small" color="primary">
+                          Share
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                  <Grid item xs={16}>
+                    <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
+                      <CardActionArea>
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            Lizard
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Lizards are a widespread group of squamate reptiles,
+                            with over 6,000 species, ranging across all
+                            continents except Antarctica
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <Button size="small" color="primary">
+                          Share
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                </Stack>
+                <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
+                  <Grid item xs={16}>
+                    <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
+                      <CardActionArea>
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            Lizard
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Lizards are a widespread group of squamate reptiles,
+                            with over 6,000 species, ranging across all
+                            continents except Antarctica
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <Button size="small" color="primary">
+                          Share
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                  <Grid item xs={16}>
+                    <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
+                      <CardActionArea>
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            Lizard
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Lizards are a widespread group of squamate reptiles,
+                            with over 6,000 species, ranging across all
+                            continents except Antarctica
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <Button size="small" color="primary">
+                          Share
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                </Stack>
+                <Stack direction="row" spacing={2}>
+                  <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
+                    <CardActionArea>
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          Lizard
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Lizards are a widespread group of squamate reptiles,
+                          with over 6,000 species, ranging across all continents
+                          except Antarctica
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" color="primary">
+                        Share
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Stack>
               </Grid>
-
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
-                >
-                  ANOTHER CARD
-                </Paper>
-              </Grid>
-
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                  SOME OTHER CARD
-                </Paper>
+              <Grid item xs={16} md={3} lg={2} xl={5}>
+                <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Lizard
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Lizards are a widespread group of squamate reptiles,
+                        with over 6,000 species, ranging across all continents
+                        except Antarctica
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Share
+                    </Button>
+                  </CardActions>
+                </Card>
+                <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Lizard
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Lizards are a widespread group of squamate reptiles,
+                        with over 6,000 species, ranging across all continents
+                        except Antarctica
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Share
+                    </Button>
+                  </CardActions>
+                </Card>
               </Grid>
             </Grid>
           </Container>
@@ -212,4 +385,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard
+export default Dashboard;
