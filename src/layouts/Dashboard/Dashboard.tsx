@@ -104,12 +104,7 @@ function Dashboard() {
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <AppBar
-          position="absolute"
-          open={open}
-          color="inherit"
-          elevation={0}
-        >
+        <AppBar position="absolute" open={open} color="inherit" elevation={0}>
           <Toolbar
             sx={{
               pr: "24px", // keep right padding when drawer closed
@@ -325,7 +320,8 @@ function Dashboard() {
                         <Typography variant="body2" color="text.secondary">
                           Lizards are a widespread group of squamate reptiles,
                           with over 6,000 species, ranging across all continents
-                          except Antarctica
+                          except Antarctica with over 6,000 species, ranging
+                          across all continents except Antarctica
                         </Typography>
                       </CardContent>
                     </CardActionArea>
