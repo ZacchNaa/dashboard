@@ -4,7 +4,7 @@ import * as IoIcons from "react-icons/io";
 import * as BiIcons from "react-icons/bi";
 import * as CgIcons from "react-icons/cg";
 import * as BsIcons from "react-icons/bs";
-import { SidebarItem } from "./models/SidebarItem";
+import { SidebarItem } from "./SidebarItem";
 
 export const SidebarPrimaryData: SidebarItem[] = [
   {
@@ -20,11 +20,11 @@ export const SidebarPrimaryData: SidebarItem[] = [
     iconOpened: <IoIcons.IoIosArrowUp />,
     subnav: [
       {
-        title: "Catalogue",
+        title: "Catalogue 1",
         path: "#",
       },
       {
-        title: "Catalogue",
+        title: "Catalogue 2",
         path: "#",
       },
     ],

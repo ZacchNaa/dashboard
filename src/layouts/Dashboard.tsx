@@ -12,16 +12,23 @@ import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { Button, Card, CardActionArea, CardActions, CardContent, Stack } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { HiOutlineLightningBolt } from "react-icons/hi";
+import {
+  SidebarPrimaryData,
+  SidebarSecondaryData,
+} from "../components/models/SidebarData";
+import {SidebarItem} from "../components/models/SidebarItem";
 // images
-import logo from "../../assets/logo.svg";
+import logo from "../assets/logo.svg";
 import { Link } from "@mui/material";
+import SubmenuItem from "../components/SubmenuItem";
+import SelectInput from "../components/SelectInput";
+import NewsCard from "../components/NewsCard";
 
-const drawerWidth: number = 240;
+const drawerWidth: number = 255;
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -104,6 +111,7 @@ function Dashboard() {
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
+        {/* APPBAR */}
         <AppBar position="absolute" open={open} color="inherit" elevation={0}>
           <Toolbar
             sx={{
@@ -147,6 +155,7 @@ function Dashboard() {
             </IconButton>
           </Toolbar>
         </AppBar>
+        {/* SIDEBAR */}
         <Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{
@@ -161,13 +170,23 @@ function Dashboard() {
               {open && <MenuIcon />}
             </IconButton>
           </Toolbar>
-          <Divider />
+          {/* SIDEBAR MENU ITEMS */}
           <List component="nav">
-            Main List Items
+            {SidebarPrimaryData.map((item: SidebarItem, index: number) => (
+              <SubmenuItem item={item} key={index} open={open} />
+            ))}
             <Divider sx={{ my: 1 }} />
-            Secondary List Items
+            {SidebarSecondaryData.map((item: SidebarItem, index: number) => (
+              <SubmenuItem item={item} key={index} open={open} />
+            ))}
           </List>
+          {/* SIDEBAR SELECT INPUT */}
+        {open && <Stack sx={{ marginTop: '3rem', mx:[2] }}>
+          <Typography variant="body1" sx={{ fontWeight: "normal", py: 1 }}>Select your shop</Typography>
+          <SelectInput />
+        </Stack>}
         </Drawer>
+        {/* MAIN CONTENT AREA */}
         <Box
           component="main"
           sx={{
@@ -364,6 +383,7 @@ function Dashboard() {
                         with over 6,000 species, ranging across all continents
                         except Antarctica
                       </Typography>
+                      <NewsCard />
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
