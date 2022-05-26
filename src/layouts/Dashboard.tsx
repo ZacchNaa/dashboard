@@ -11,6 +11,7 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
+import { AiOutlineEye, AiOutlineUnorderedList } from "react-icons/ai";
 import Grid from "@mui/material/Grid";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { Button, Card, CardActionArea, CardActions, CardContent, Stack } from "@mui/material";
@@ -27,6 +28,12 @@ import { Link } from "@mui/material";
 import SubmenuItem from "../components/SubmenuItem";
 import SelectInput from "../components/SelectInput";
 import NewsCard from "../components/NewsCard";
+import VisitorsOrdersContainer from "../components/VisitorsOrdersContainer";
+import RightSection from "../components/RightSection";
+import AllNewsList from "../components/AllNewsList";
+import VisitorsAndOrders from "../components/VisitorsAndOrders";
+import MarketDemoPlace from "../components/MarketDemoPlace";
+
 
 const drawerWidth: number = 255;
 
@@ -109,7 +116,7 @@ function Dashboard() {
 
   return (
     <ThemeProvider theme={mdTheme}>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", height: "100vh" }}>
         <CssBaseline />
         {/* APPBAR */}
         <AppBar position="absolute" open={open} color="inherit" elevation={0}>
@@ -156,7 +163,7 @@ function Dashboard() {
           </Toolbar>
         </AppBar>
         {/* SIDEBAR */}
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open} sx={{}}>
           <Toolbar
             sx={{
               display: "flex",
@@ -181,10 +188,20 @@ function Dashboard() {
             ))}
           </List>
           {/* SIDEBAR SELECT INPUT */}
-        {open && <Stack sx={{ marginTop: '3rem', mx:[2] }}>
-          <Typography variant="body1" sx={{ fontWeight: "normal", py: 1 }}>Select your shop</Typography>
-          <SelectInput />
-        </Stack>}
+          {open && (
+            <Stack
+              sx={{
+                marginTop: "3rem",
+                mx: [2],
+                paddingBottom: "9rem",
+              }}
+            >
+              <Typography variant="body1" sx={{ fontWeight: "normal", py: 1 }}>
+                Select your shop
+              </Typography>
+              <SelectInput />
+            </Stack>
+          )}
         </Drawer>
         {/* MAIN CONTENT AREA */}
         <Box
@@ -241,157 +258,14 @@ function Dashboard() {
           <Container maxWidth="xl" sx={{ mt: -9, mb: 4 }}>
             <Grid container columns={16} spacing={2}>
               <Grid item xs={16} md={12} lg={11} xl={11}>
-                <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
-                  <Grid item xs={16}>
-                    <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
-                      <CardActionArea>
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="div">
-                            Lizard
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            Lizards are a widespread group of squamate reptiles,
-                            with over 6,000 species, ranging across all
-                            continents except Antarctica
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <Button size="small" color="primary">
-                          Share
-                        </Button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                  <Grid item xs={16}>
-                    <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
-                      <CardActionArea>
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="div">
-                            Lizard
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            Lizards are a widespread group of squamate reptiles,
-                            with over 6,000 species, ranging across all
-                            continents except Antarctica
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <Button size="small" color="primary">
-                          Share
-                        </Button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                </Stack>
-                <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
-                  <Grid item xs={16}>
-                    <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
-                      <CardActionArea>
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="div">
-                            Lizard
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            Lizards are a widespread group of squamate reptiles,
-                            with over 6,000 species, ranging across all
-                            continents except Antarctica
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <Button size="small" color="primary">
-                          Share
-                        </Button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                  <Grid item xs={16}>
-                    <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
-                      <CardActionArea>
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="div">
-                            Lizard
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            Lizards are a widespread group of squamate reptiles,
-                            with over 6,000 species, ranging across all
-                            continents except Antarctica
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <Button size="small" color="primary">
-                          Share
-                        </Button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                </Stack>
-                <Stack direction="row" spacing={2}>
-                  <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
-                    <CardActionArea>
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                          Lizard
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          Lizards are a widespread group of squamate reptiles,
-                          with over 6,000 species, ranging across all continents
-                          except Antarctica with over 6,000 species, ranging
-                          across all continents except Antarctica
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                      <Button size="small" color="primary">
-                        Share
-                      </Button>
-                    </CardActions>
-                  </Card>
+                <VisitorsAndOrders />
+                <MarketDemoPlace />
+                <Stack sx={{ backgroundColor: "white" }} spacing={2}>
+                  <AllNewsList />
                 </Stack>
               </Grid>
               <Grid item xs={16} md={3} lg={2} xl={5}>
-                <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
-                  <CardActionArea>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      Share
-                    </Button>
-                  </CardActions>
-                </Card>
-                <Card sx={{ maxWidth: "100%", marginBottom: 2 }}>
-                  <CardActionArea>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
-                      </Typography>
-                      <NewsCard />
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      Share
-                    </Button>
-                  </CardActions>
-                </Card>
+                <RightSection />
               </Grid>
             </Grid>
           </Container>
