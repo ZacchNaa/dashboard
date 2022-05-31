@@ -4,7 +4,7 @@ import * as IoIcons from "react-icons/io";
 import * as BiIcons from "react-icons/bi";
 import * as CgIcons from "react-icons/cg";
 import * as BsIcons from "react-icons/bs";
-import { SidebarItem } from "./SidebarItem";
+import { SidebarItem } from "./DataStructure";
 
 export const SidebarPrimaryData: SidebarItem[] = [
   {

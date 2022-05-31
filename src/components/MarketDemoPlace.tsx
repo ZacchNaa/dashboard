@@ -1,4 +1,4 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, Grid, Stack, Typography } from '@mui/material';
+import { Card, CardActionArea, CardActions, CardContent, Grid, Stack } from '@mui/material';
 import { CgExtensionAdd } from 'react-icons/cg';
 import ExtensionsMarketplace from './ExtensionsMarketplace';
 import ProductAdvert from './ProductAdvert';
@@ -35,7 +35,7 @@ const MarketDemoPlace = () => {
       </Grid>
       <Grid item xs={16}>
         <VisitorsOrdersContainer
-          componentHeight=""
+          componentHeight="320px"
           cardLable="Extensions Marketplace"
           hasDate={false}
           Icon={<CgExtensionAdd size={25} color="#103B66" />}

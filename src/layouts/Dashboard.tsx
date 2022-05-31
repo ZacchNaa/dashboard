@@ -21,7 +21,7 @@ import {
   SidebarPrimaryData,
   SidebarSecondaryData,
 } from "../components/models/SidebarData";
-import {SidebarItem} from "../components/models/SidebarItem";
+import {SidebarItem} from "../components/models/DataStructure";
 // images
 import logo from "../assets/logo.svg";
 import { Link } from "@mui/material";

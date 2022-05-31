@@ -5,8 +5,9 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import { BsArrowRightShort } from "react-icons/bs";
 import SplitButton from "./SplitButton";
-import { Link, Stack } from "@mui/material";
+import { Box, Link, Stack } from "@mui/material";
 import { FC } from "react";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 type VisitorsOrdersContainerProps = {
   componentHeight?: string;
@@ -19,6 +20,7 @@ type VisitorsOrdersContainerProps = {
   LabelColor?: string;
   image?: any;
   children: React.ReactNode;
+  hasTopRightUrl?: boolean;
 };
 
 const CardLabel = styled(Typography)(({ theme }) => ({
@@ -46,7 +48,12 @@ const VisitorsOrdersContainer: FC<VisitorsOrdersContainerProps> = ({
   readMoreLink,
   image,
   LabelColor,
+  hasTopRightUrl,
 }) => {
+  // const cardTopLink = () => (
+
+  // );
+
   return (
     <Card
       sx={{
@@ -68,7 +75,15 @@ const VisitorsOrdersContainer: FC<VisitorsOrdersContainerProps> = ({
         >
           <Stack direction="row" columnGap={1}>
             {image && (
-                          <img src={image} alt="start" style={{ marginRight: "0rem", marginBottom: "1rem", width: "30%" }} />
+              <img
+                src={image}
+                alt="start"
+                style={{
+                  marginRight: "0rem",
+                  marginBottom: "1rem",
+                  width: "30%",
+                }}
+              />
             )}
             {Icon}
             <CardLabel
@@ -79,6 +94,25 @@ const VisitorsOrdersContainer: FC<VisitorsOrdersContainerProps> = ({
             </CardLabel>
           </Stack>
           {hasDate && <SplitButton />}
+          {hasTopRightUrl && (
+            <Box
+              sx={{
+                py: [2],
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                color: "#21B8F9",
+              }}
+            >
+              <Link
+                href="#"
+                sx={{ color: "#21B8F9", textDecoration: "underline", px: [3] }}
+              >
+                visit our blog
+              </Link>
+              <OpenInNewIcon />
+            </Box>
+          )}
         </Stack>
         {children}
       </CardContent>

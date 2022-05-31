@@ -1,9 +1,10 @@
 import { Avatar, Button, Stack, styled, Typography } from '@mui/material';
 import { FiHeadphones, FiUsers } from 'react-icons/fi';
 import { TiSpannerOutline } from "react-icons/ti";
-import TextTruncate from "../components/TextTruncate/TextTruncate";
+import TextTruncate from "./TextTruncate/TextTruncate";
 import VisitorsOrdersContainer from './VisitorsOrdersContainer';
 import Star from "../assets/star.svg";
+import UserImage from "../assets/user.webp";
 
 
 const ContactusButton = styled(Button)(({ theme }) => ({
@@ -116,7 +117,7 @@ const RightSection = () => {
               fontSize: "1.5rem",
             }}
             alt="Simone"
-            src="/broken-image.jpg"
+            src={UserImage}
           />
           <Typography
             sx={{
