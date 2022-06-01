@@ -1,4 +1,4 @@
-import { Grid, Typography, Card, Link, styled, Stack } from "@mui/material";
+import { Grid, Typography, Link, styled, Stack } from "@mui/material";
 import { BsArrowRightShort } from "react-icons/bs";
 import Phone from "../assets/iPhone-12.png";
 
