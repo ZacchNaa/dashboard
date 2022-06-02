@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./layouts/Dashboard";
 import Error404 from './pages/Error404';

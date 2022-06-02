@@ -27,7 +27,7 @@ import { Link } from "@mui/material";
 import SubmenuItem from "../components/SubmenuItem";
 import SelectInput from "../components/SelectInput";
 import RightSection from "../components/RightSection";
-import AllNewsList from "../components/AllNewsList";
+import {AllNewsList} from "../components/AllNewsList";
 import VisitorsAndOrders from "../components/VisitorsAndOrders";
 import MarketDemoPlace from "../components/MarketDemoPlace";
 
@@ -82,7 +82,7 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-const mdTheme = createTheme({
+export const mdTheme = createTheme({
   customProps: {
     background: "#E5E5E5",
     color: "#103B66",

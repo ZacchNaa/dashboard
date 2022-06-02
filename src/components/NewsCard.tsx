@@ -45,8 +45,8 @@ const NewsCard = () => {
   const data =
     state.data &&
     state.data.map((item: PayloadType, index: number) => (
-      <Grid item xs={16} lg={8} columnSpacing={2} key={index}>
-        <Card elevation={0} sx={{ display: "flex", borderRadius: "0px" }}>
+      <Grid item xs={16} lg={8} columnSpacing={2} key={index} >
+        <Card elevation={0} sx={{ display: "flex", borderRadius: "0px" }} >
           {loading ? (
             <Skeleton
               sx={{ bgcolor: "grey.900" }}

@@ -9,7 +9,7 @@ const url =
   "https://newsapi.org/v2/everything?q=Apple&from=2022-05-29&sortBy=popularity&pageSize=8&apiKey=f8123501fb024c38b837b5cedb8ce9d4";
 
 
-const AllNewsList = () => {
+export const AllNewsList = () => {
    const state = useFetch(url);
   return (
     <VisitorsOrdersContainer
@@ -20,12 +20,10 @@ const AllNewsList = () => {
       hasTopRightUrl={true}
     >
       <NewsContextProvider value={state}>
-        <Grid container columns={16} spacing={2}>
+        <Grid container columns={16} spacing={2} role="contentinfo">
           <NewsCard />
         </Grid>
       </NewsContextProvider>
     </VisitorsOrdersContainer>
   );
 }
-
-export default AllNewsList
