@@ -33,7 +33,7 @@ const MarketDemoPlace = () => {
           </CardActions>
         </Card>
       </Grid>
-      <Grid item xs={16}>
+      <Grid item xs={16} data-testid="extensions-marketplace">
         <VisitorsOrdersContainer
           componentHeight="320px"
           cardLable="Extensions Marketplace"

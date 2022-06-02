@@ -9,7 +9,7 @@ import { Box, Link, Stack } from "@mui/material";
 import { FC } from "react";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
-type VisitorsOrdersContainerProps = {
+export type VisitorsOrdersContainerProps = {
   componentHeight?: string;
   cardLable: string;
   Icon?: any;

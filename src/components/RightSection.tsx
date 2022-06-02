@@ -31,6 +31,7 @@ const RightSection = () => {
         readMoreLink="Complete the setup!"
       >
         <Typography
+          data-testid="right-section-percentage"
           variant="h4"
           sx={{
             fontSize: "2rem",
@@ -63,6 +64,7 @@ const RightSection = () => {
         readMoreLink="Write a review on Trustpilot!"
       >
         <Typography
+          data-testid="right-section-trustpilot"
           sx={{
             fontSize: "17px",
             color: "#fff",
@@ -83,6 +85,7 @@ const RightSection = () => {
         readMoreLink="Start inviting friends!"
       >
         <Typography
+          data-testid="right-section-invite-friend"
           sx={{
             fontSize: "17px",
             color: "#103B66",
@@ -120,6 +123,7 @@ const RightSection = () => {
             src={UserImage}
           />
           <Typography
+            data-testid="right-section-customer-support"
             sx={{
               fontSize: "15px",
               color: "#103B66",

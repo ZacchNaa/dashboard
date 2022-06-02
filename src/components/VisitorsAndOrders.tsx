@@ -5,7 +5,7 @@ import VisitorsOrdersContainer from './VisitorsOrdersContainer';
 const VisitorsAndOrders = () => {
   return (
     <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
-      <Grid item xs={16}>
+      <Grid item xs={16} data-testid="visitors">
         <VisitorsOrdersContainer
           componentHeight="170px"
           cardLable="Visitors"
@@ -26,7 +26,7 @@ const VisitorsAndOrders = () => {
           </Typography>
         </VisitorsOrdersContainer>
       </Grid>
-      <Grid item xs={16}>
+      <Grid item xs={16} data-testid="orders">
         <VisitorsOrdersContainer
           componentHeight="170px"
           cardLable="Orders"
